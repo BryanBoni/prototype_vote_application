@@ -7,6 +7,10 @@ body{
     margin-left: auto;
 }
 
+ul{
+    list-style-type: none !important;
+}
+
 /* ---------------- Index.html -------------------- */
 #header{
     /*padding: 10px;*/
