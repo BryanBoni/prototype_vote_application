@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Connexion/Inscription</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+        <script src="../model/main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="../index.html">Accueil</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">Voter publiquement</a></li>
+                            <li><a href="login_signin.html">Se connecter/S'inscrire</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+
+    <center>
+        <div id="content-alt" class="container-fluid" style="width: fit-content;">
+
+            <div class="row">
+                <div id="selectorLoginSignin" class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+                    <ul class="nav nav-pills  nav-justified" role="tablist">
+                        <li role = "presentation" class="active" id="loginSelector"><a href="#actu" aria-controls="actu" role="tab" data-toggle="tab"><h4><b>Connexion</b></h4></a></li>
+                        <li role = "presentation" class="" id="signinSelector"><a href="#guide" role="tab" data-toggle="tab"><h4><b>Inscription</b></h4></a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <br />
+            
+            <div id="logForm" class="row">
+                <div id="login" class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+                    <form data-toggle="validator" role="form">
+
+                        <div class="form-group has-feedback">
+                            <label for="inputEmail" class="control-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Bruh, cette adresse mail n'est pas valide gros !" required>
+                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <label for="inputPassword" class="control-label">Mot de passe</label>
+                            <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Mot de passe" required>
+                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                            <div class="help-block with-errors"><!--Minimum de 6 caractères --> </div>
+                        </div>
+
+                        <center><b>- OU -</b></center>
+                        <div id="otherLogin">
+                            <b>Se connecter via :</b>
+                            <div id="otherLoginLink">(Pas encore disponnible)</div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Se connecter</button>
+                        </div>
+                    </form>
+                </div>
+                
+                
+                <div id="signin" class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+                    <form data-toggle="validator" role="form">
+                        <div class="form-group has-feedback">
+                            <label for="inputName" class="control-label">Name</label>
+                            <input type="text" class="form-control" id="inputName" placeholder="Votre nom" data-error="Veuillez renseigner un nom valide et/ou existant !" required>
+                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <label for="inputName" class="control-label">Prénom</label>
+                            <input type="text" class="form-control" id="inputName" placeholder="Votre prénom" data-error="Veuillez renseigner un prénom valide et/ou existant !" required>
+                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <label for="inputEmail" class="control-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Bruh, cette adresse mail n'est pas valide gros !" required>
+                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputPassword" class="control-label">Mot de passe</label>
+                            <div class="row"><!-- form-inline -->
+                                <div class="form-group has-feedback col-lg-12">
+                                    <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Mot de passe" required>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors">Minimum de 6 caractères</div>
+                                </div>
+
+                                <div class="form-group has-feedback col-lg-12">
+                                    <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Aie ! ça n'a pas l'air d'être le même mot de passe désoler ^^' !" placeholder="Confirmation de votre Mot de passe" required>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" id="terms" data-error="Before you wreck yourself" required>
+                                    J'accepte les conditions d'utilisation du site.
+                                </label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">S'inscrire</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br />
+        </div>
+    </center>
+    <div id="footer">
+    </div>
+    <script src="../model/login_signin_tools.js"></script>
+</body>
+</html>
